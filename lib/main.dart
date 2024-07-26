@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_techblog/my_colors.dart';
-import 'package:flutter_techblog/view/splash_screen.dart';
+import 'package:flutter_techblog/view/register_intro.dart';
+// import 'package:flutter_techblog/view/splash_screen.dart';
 
 // import 'package:flutter_spinkit/flutter_spinkit.dart';
 void main() {
@@ -10,7 +11,7 @@ void main() {
   statusBarIconBrightness: Brightness.dark,
   systemNavigationBarColor: SolidColors.systemNavigationBarColor,
   systemNavigationBarIconBrightness: Brightness.dark));
-  runApp(const MyApp());
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -34,22 +35,12 @@ class MyApp extends StatelessWidget {
           fontFamily: 'dana',
           brightness: Brightness.light,
           textTheme: const TextTheme(
+
             headlineSmall: TextStyle(
               fontFamily: "dana",
               fontSize: 16,
               fontWeight: FontWeight.w700,
               color: SolidColors.posterTitle,
-            ),
-            titleSmall: TextStyle(
-              fontFamily: 'dana',
-              fontSize: 14,
-              fontWeight:FontWeight.w300,
-              color: SolidColors.posterSubTitle, 
-            ),
-            bodySmall: TextStyle(
-              fontFamily: 'dana',
-              fontSize: 13,
-              fontWeight: FontWeight.w300,
             ),
             headlineMedium: TextStyle(
               fontFamily: 'dana',
@@ -62,6 +53,30 @@ class MyApp extends StatelessWidget {
                 fontSize: 14,
                 color: SolidColors.seeMore,
                 fontWeight: FontWeight.w700),
+            titleSmall: TextStyle(
+              fontFamily: 'dana',
+              fontSize: 14,
+              fontWeight:FontWeight.w300,
+              color: SolidColors.posterSubTitle, 
+            ),
+            titleMedium: TextStyle(
+              fontFamily: 'dana',
+              fontSize: 14,
+              fontWeight:FontWeight.w700,
+              color: SolidColors.primeryColor, 
+            ), 
+           titleLarge: TextStyle(
+              fontFamily: 'dana',
+              fontSize: 14,
+              fontWeight:FontWeight.w700,
+              color: SolidColors.titlesColors, 
+            ),
+            
+            bodySmall: TextStyle(
+              fontFamily: 'dana',
+              fontSize: 13,
+              fontWeight: FontWeight.w300,
+            ),
             bodyMedium: TextStyle(
                 fontFamily: "dana",
                 fontSize: 14,
@@ -70,6 +85,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home: SplashScreen());
+        home:RegisterIntro());
+        // home: const SplashScreen());
   }
 }

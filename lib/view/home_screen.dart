@@ -1,10 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
 import 'package:flutter_techblog/models/fake_data.dart';
 import 'package:flutter_techblog/my_colors.dart';
 import 'package:flutter_techblog/my_strings.dart';
-
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -26,21 +24,22 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 16),
         child: Column(
           children: [
-           
             HomePagePoster(size: size, textTheme: textTheme),
             HomePageTagList(bodyMargin: bodyMargin, textTheme: textTheme),
             const SizedBox(
               height: 32,
             ),
             SeeMoreBlog(bodyMargin: bodyMargin, textTheme: textTheme),
-            HomePageBlogList(size: size, bodyMargin: bodyMargin, textTheme: textTheme),
+            HomePageBlogList(
+                size: size, bodyMargin: bodyMargin, textTheme: textTheme),
             SeeMorePodcast(bodyMargin: bodyMargin, textTheme: textTheme),
             const SizedBox(
               height: 10,
             ),
-
             HomePagePodcastList(size: size, bodyMargin: bodyMargin),
-            const SizedBox(height: 60,),               
+            const SizedBox(
+              height: 60,
+            ),
           ],
         ),
       ),
@@ -74,7 +73,7 @@ class SeeMorePodcast extends StatelessWidget {
             width: 8,
           ),
           Text(
-            my_strings.viewhHotesPadcast,
+            MyStrings.viewhHotesPadcast,
             style: textTheme.headlineLarge,
           ),
         ],
@@ -107,7 +106,7 @@ class SeeMoreBlog extends StatelessWidget {
             width: 8,
           ),
           Text(
-            my_strings.viewHotestBlog,
+            MyStrings.viewHotestBlog,
             style: textTheme.headlineLarge,
           ),
         ],
@@ -135,8 +134,7 @@ class HomePagePodcastList extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: ((context, index) {
             return Padding(
-              padding: EdgeInsets.only(
-                  right: index == 0 ? bodyMargin : 15),
+              padding: EdgeInsets.only(right: index == 0 ? bodyMargin : 15),
               child: Column(
                 children: [
                   Padding(
@@ -186,8 +184,7 @@ class HomePageBlogList extends StatelessWidget {
           itemBuilder: ((context, index) {
             //blog item
             return Padding(
-              padding: EdgeInsets.only(
-                  right: index == 0 ? bodyMargin : 15),
+              padding: EdgeInsets.only(right: index == 0 ? bodyMargin : 15),
               child: Column(
                 children: [
                   Padding(
@@ -198,17 +195,14 @@ class HomePageBlogList extends StatelessWidget {
                       child: Stack(children: [
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16),
                             image: DecorationImage(
-                              image: NetworkImage(
-                                  blogList[index].imageUrl),
+                              image: NetworkImage(blogList[index].imageUrl),
                               fit: BoxFit.cover,
                             ),
                           ),
                           foregroundDecoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16),
                             gradient: const LinearGradient(
                               colors: GradiantColors.blogPost,
                               begin: Alignment.topCenter,
@@ -221,8 +215,7 @@ class HomePageBlogList extends StatelessWidget {
                           left: 0,
                           right: 0,
                           child: Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text(
                                 blogList[index].writer,
@@ -284,8 +277,8 @@ class HomePageTagList extends StatelessWidget {
           itemCount: tagList.length,
           itemBuilder: ((context, index) {
             return Padding(
-              padding: EdgeInsets.fromLTRB(
-                  0, 15, index == 0 ? bodyMargin : 15, 8),
+              padding:
+                  EdgeInsets.fromLTRB(0, 15, index == 0 ? bodyMargin : 15, 8),
               child: Container(
                   height: 60,
                   decoration: const BoxDecoration(

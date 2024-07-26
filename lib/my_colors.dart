@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class SolidColors {
+  static const Color titlesColors = Color.fromARGB(255, 16, 16, 16);
   static const Color primeryColor = Color.fromARGB(255, 68, 4, 87);
-  static const Color colorTitles = Color.fromARGB(255, 40, 107, 184);
   static const Color textTitles = Color.fromARGB(255, 0, 0, 0);
   static const Color scaffoldBg = Color.fromARGB(255, 255, 255, 255);
   static const Color statusBarColor = Color.fromARGB(255, 255, 255, 255);
@@ -15,6 +15,7 @@ class SolidColors {
   static const Color posterTitle = Color.fromARGB(255, 255, 255, 255);
   static const Color posterSubTitle = Color.fromARGB(200, 255, 255, 255);
   static const Color seeMore = Color.fromARGB(255, 40, 107,184);
+  static const Color dividerColor = Color.fromARGB(255, 112, 112,112);
   
 }
 
