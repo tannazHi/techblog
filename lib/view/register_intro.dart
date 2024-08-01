@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
 import 'package:flutter_techblog/my_strings.dart';
 import 'package:flutter_techblog/view/my_cats.dart';
-// import 'package:validators/validators.dart';
+
 
 class RegisterIntro extends StatelessWidget {
   const RegisterIntro({super.key});

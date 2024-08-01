@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_techblog/my_colors.dart';
 import 'package:flutter_techblog/view/main_screen.dart';
-// import 'package:flutter_techblog/view/register_intro.dart';
+
+
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -115,7 +116,5 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         home:const MainScreen());
-        // home: const SplashScreen());
-        // home: const MainScreen());
   }
 }

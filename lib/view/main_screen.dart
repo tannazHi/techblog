@@ -3,9 +3,6 @@ import 'package:flutter_techblog/view/home_screen.dart';
 import 'package:flutter_techblog/view/profile_screen.dart';
 import 'package:flutter_techblog/my_colors.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
-// import 'package:flutter_techblog/models/fake_data.dart';
-// import 'package:flutter_techblog/my_strings.dart';
-// import 'package:flutter_techblog/view/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,6 +11,8 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+final GlobalKey<ScaffoldState> _key = GlobalKey();
+
 class _MainScreenState extends State<MainScreen> {
   var selctedPageIndex = 0;
   @override
@@ -21,19 +20,82 @@ class _MainScreenState extends State<MainScreen> {
     var size = MediaQuery.of(context).size;
     var textTheme = Theme.of(context).textTheme;
     double bodyMargin = size.width / 13;
- 
+
     return SafeArea(
       child: Scaffold(
+        key: _key,
+        drawer: Drawer(
+          backgroundColor: SolidColors.scaffoldBg,
+          child: Padding(
+            padding: EdgeInsets.only(right: bodyMargin, left: bodyMargin),
+            child: ListView(
+              children: [
+                DrawerHeader(
+                    child: Center(
+                        child: Image.asset(
+                  Assets.images.logo.path,
+                  scale: 3,
+                ))),
+                ListTile(
+                  title: Text(
+                    "پروفایل کاربری",
+                    style: textTheme.titleLarge,
+                  ),
+                  onTap: () {},
+                ),
+                const Divider(
+                  color: SolidColors.dividerColor,
+                ),
+                ListTile(
+                  title: Text(
+                    "درباره تک‌بلاگ",
+                    style: textTheme.titleLarge,
+                  ),
+                  onTap: () {},
+                ),
+                const Divider(
+                  color: SolidColors.dividerColor,
+                ),
+                ListTile(
+                  title: Text(
+                    "اشتراک گذاری تک بلاگ",
+                    style: textTheme.titleLarge,
+                  ),
+                  onTap: () {},
+                ),
+                const Divider(
+                  color: SolidColors.dividerColor,
+                ),
+                ListTile(
+                  title: Text(
+                    "تک‌بلاگ در گیت هاب",
+                    style: textTheme.titleLarge,
+                  ),
+                  onTap: () {},
+                ),
+                const Divider(
+                  color: SolidColors.dividerColor,
+                ),
+              ],
+            ),
+          ),
+        ),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           elevation: 0,
           backgroundColor: SolidColors.scaffoldBg,
           title: //appBar
               Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Icon(
-                Icons.menu,
-                color: Colors.black,
+              InkWell(
+                onTap: () {
+                  _key.currentState!.openDrawer();
+                },
+                child: const Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                ),
               ),
               Image(
                 image: Assets.images.logo.provider(),
@@ -47,11 +109,14 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ),
         body: Stack(children: [
-          Positioned.fill(child:IndexedStack(
+          Positioned.fill(
+              child: IndexedStack(
             index: selctedPageIndex,
             children: [
-              HomeScreen(size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-              ProfileScreen(size: size, textTheme: textTheme, bodyMargin: bodyMargin),
+              HomeScreen(
+                  size: size, textTheme: textTheme, bodyMargin: bodyMargin),
+              ProfileScreen(
+                  size: size, textTheme: textTheme, bodyMargin: bodyMargin),
             ],
           )),
           BottomNavigation(

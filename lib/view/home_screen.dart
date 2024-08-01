@@ -153,7 +153,6 @@ class HomePagePodcastList extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 200,
                     child: Text(podList[index].name),
                   )
                 ],
@@ -184,7 +183,7 @@ class HomePageBlogList extends StatelessWidget {
           itemCount: blogList.getRange(0, 5).length,
           scrollDirection: Axis.horizontal,
           itemBuilder: ((context, index) {
-            //blog item
+      //       //blog item
             return Padding(
               padding: EdgeInsets.only(right: index == 0 ? bodyMargin : 15),
               child: Column(
@@ -198,10 +197,10 @@ class HomePageBlogList extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
-                            image: DecorationImage(
-                              image: NetworkImage(blogList[index].imageUrl),
-                              fit: BoxFit.cover,
-                            ),
+                            // image: DecorationImage(
+                            //   image: NetworkImage(blogList[index].imageUrl),
+                            //   fit: BoxFit.cover,
+                            // ),
                           ),
                           foregroundDecoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
@@ -241,7 +240,7 @@ class HomePageBlogList extends StatelessWidget {
                               ),
                             ],
                           ),
-                        )
+                        ),
                       ]),
                     ),
                   ),
@@ -255,7 +254,8 @@ class HomePageBlogList extends StatelessWidget {
                 ],
               ),
             );
-          })),
+          })
+      ),
     );
   }
 }
