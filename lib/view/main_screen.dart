@@ -47,16 +47,13 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ),
         body: Stack(children: [
-          Center(
-            child:
-                Positioned.fill(child:IndexedStack(
-                  index: selctedPageIndex,
-                  children: [
-                    HomeScreen(size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-                    ProfileScreen(size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-                  ],
-                )),
-          ),
+          Positioned.fill(child:IndexedStack(
+            index: selctedPageIndex,
+            children: [
+              HomeScreen(size: size, textTheme: textTheme, bodyMargin: bodyMargin),
+              ProfileScreen(size: size, textTheme: textTheme, bodyMargin: bodyMargin),
+            ],
+          )),
           BottomNavigation(
             size: size,
             bodyMargin: bodyMargin,

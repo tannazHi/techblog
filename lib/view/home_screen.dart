@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
 import 'package:flutter_techblog/models/fake_data.dart';
 import 'package:flutter_techblog/my_colors.dart';
+import 'package:flutter_techblog/my_component.dart';
 import 'package:flutter_techblog/my_strings.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -152,6 +153,7 @@ class HomePagePodcastList extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
+                    width: 200,
                     child: Text(podList[index].name),
                   )
                 ],
@@ -279,34 +281,7 @@ class HomePageTagList extends StatelessWidget {
             return Padding(
               padding:
                   EdgeInsets.fromLTRB(0, 15, index == 0 ? bodyMargin : 15, 8),
-              child: Container(
-                  height: 60,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    ),
-                    gradient: LinearGradient(
-                      colors: GradiantColors.tags,
-                      begin: Alignment.centerRight,
-                      end: Alignment.centerLeft,
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      ImageIcon(
-                        Assets.icons.hashtagicon.provider(),
-                        color: Colors.white,
-                        size: 16,
-                      ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        tagList[index].title,
-                        style: textTheme.headlineMedium,
-                      ),
-                    ],
-                  )),
+              child: MainTags(textTheme: textTheme, index: index,),
             );
           })),
     );
