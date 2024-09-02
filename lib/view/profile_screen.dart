@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
-import 'package:flutter_techblog/my_colors.dart';
-import 'package:flutter_techblog/my_component.dart';
-import 'package:flutter_techblog/my_strings.dart';
-// import 'package:flutter_techblog/models/fake_data.dart';
-// import 'package:flutter_techblog/my_colors.dart';
-// import 'package:flutter_techblog/my_strings.dart';
-
+import 'package:flutter_techblog/component/my_colors.dart';
+import 'package:flutter_techblog/component/my_component.dart';
+import 'package:flutter_techblog/component/my_strings.dart';
+import 'package:flutter_techblog/view/blog_list.dart';
+import 'package:flutter_techblog/view/pod_list.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({
     super.key,
@@ -63,7 +61,10 @@ class ProfileScreen extends StatelessWidget {
         ),
         TechDivider(size: size),
         InkWell(
-          onTap: () {},
+          onTap: () {
+             Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => const BlogList(size: Size(1000,1000), textTheme:TextTheme(), bodyMargin:15)));
+          },
           splashColor: SolidColors.primeryColor,
           child: SizedBox(
               height: 45,
@@ -75,7 +76,10 @@ class ProfileScreen extends StatelessWidget {
         ),
         TechDivider(size: size),
         InkWell(
-          onTap: () {},
+          onTap: () {
+               Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => const PodList(size: Size(1000,1000), textTheme:TextTheme(), bodyMargin:15)));
+          },
           splashColor: SolidColors.primeryColor,
           child: SizedBox(
               height: 45,

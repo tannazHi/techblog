@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
-import 'package:flutter_techblog/my_strings.dart';
+import 'package:flutter_techblog/component/my_strings.dart';
 import 'package:flutter_techblog/view/my_cats.dart';
 
 
 class RegisterIntro extends StatelessWidget {
-  const RegisterIntro({super.key});
+  const RegisterIntro({  super.key,
+    required this.size,
+    required this.textTheme,
+    required this.bodyMargin,
+  });
+
+  final Size size;
+  final TextTheme textTheme;
+  final double bodyMargin;
 
   @override
   Widget build(BuildContext context) {

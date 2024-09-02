@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_techblog/my_colors.dart';
+import 'package:flutter_techblog/component/my_colors.dart';
 import 'package:flutter_techblog/view/main_screen.dart';
-
 
 
 void main() {
@@ -115,6 +114,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home:const MainScreen());
+        home: const MainScreen());
+    // home: PodList(size: Size(1000, 1000), textTheme: textTheme, bodyMargin:15));
+    // home: BlogList(size: const Size(1000, 1000), textTheme: textTheme, bodyMargin: 15,));
   }
 }

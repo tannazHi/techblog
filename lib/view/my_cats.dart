@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
-// import 'package:flutter_techblog/models/data_models.dart';
 import 'package:flutter_techblog/models/fake_data.dart';
-import 'package:flutter_techblog/my_colors.dart';
-import 'package:flutter_techblog/my_component.dart';
-import 'package:flutter_techblog/my_strings.dart';
-
+import 'package:flutter_techblog/component/my_colors.dart';
+import 'package:flutter_techblog/component/my_component.dart';
+import 'package:flutter_techblog/component/my_strings.dart';
+import 'package:flutter_techblog/view/blogManagment_screen.dart';
+import 'package:flutter_techblog/view/podManagment_screen.dart';
 
 class MyCats extends StatefulWidget {
   const MyCats({super.key});
@@ -163,6 +163,7 @@ class _MyCatsState extends State<MyCats> {
                 ),
                 ElevatedButton(
                   onPressed: (() {
+                    Navigator.pop(context);
                     secondMainBottomSheet(context, size, textTheme);
                   }),
                   style: ElevatedButton.styleFrom(
@@ -193,35 +194,88 @@ class _MyCatsState extends State<MyCats> {
                 bottom: MediaQuery.of(context).viewInsets.bottom),
             child: SizedBox(
               height: size.height / 3,
-              child:Column(
+              child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 16,16, 8),
+                    padding: const EdgeInsets.fromLTRB(0, 16, 16, 8),
                     child: Row(
                       children: [
-                        SvgPicture.asset(Assets.images.techbot1.path ,width: 30,),
-                        Text(MyStrings.secondMainTitle,style: textTheme.titleLarge,),
+                        SvgPicture.asset(
+                          Assets.images.techbot1.path,
+                          width: 30,
+                        ),
+                        Text(
+                          MyStrings.secondMainTitle,
+                          style: textTheme.titleLarge,
+                        ),
                       ],
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(MyStrings.secondMainText ,style: textTheme.bodyMedium,),
+                    child: Text(
+                      MyStrings.secondMainText,
+                      style: textTheme.bodyMedium,
+                    ),
                   ),
-                   const SizedBox(height: 64,),
+                  const SizedBox(
+                    height: 64,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ImageIcon(Assets.icons.pen.provider(),),
-                      Text(MyStrings.blogManagement,style: textTheme.titleLarge,),
-                       ImageIcon(Assets.icons.mic.provider(),),
-                       Text(MyStrings.podCastManagement,style: textTheme.titleLarge,),
+                      Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const BlogmanagmentScreen(size: Size(1000,1000), textTheme: TextTheme(), bodyMargin:15,)));
+                            },
+                            child: Row(
+                              children: [
+                                ImageIcon(
+                                  Assets.icons.pen.provider(),
+                                ),
+                                Text(
+                                  MyStrings.blogManagement,
+                                  style: textTheme.titleLarge,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PodmanagmentScreen(size: Size(1000,1000), textTheme: TextTheme(), bodyMargin:15,)));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ImageIcon(
+                                  Assets.icons.mic.provider(),
+                                ),
+                                Text(
+                                  MyStrings.podCastManagement,
+                                  style: textTheme.titleLarge,
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   )
                 ],
               ),
-              
-              ),
+            ),
           );
         }));
   }

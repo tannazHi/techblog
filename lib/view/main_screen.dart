@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_techblog/gen/assets.gen.dart';
+import 'package:flutter_techblog/component/my_colors.dart';
 import 'package:flutter_techblog/view/home_screen.dart';
 import 'package:flutter_techblog/view/profile_screen.dart';
-import 'package:flutter_techblog/my_colors.dart';
-import 'package:flutter_techblog/gen/assets.gen.dart';
-
+import 'package:flutter_techblog/view/register_intro.dart';
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -117,6 +117,8 @@ class _MainScreenState extends State<MainScreen> {
                   size: size, textTheme: textTheme, bodyMargin: bodyMargin),
               ProfileScreen(
                   size: size, textTheme: textTheme, bodyMargin: bodyMargin),
+              RegisterIntro(
+                size: size, textTheme: textTheme, bodyMargin: bodyMargin)
             ],
           )),
           BottomNavigation(
@@ -178,7 +180,7 @@ class BottomNavigation extends StatelessWidget {
                       color: Colors.white,
                     )),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: (() => changeScreen(2)) ,
                   icon: ImageIcon(
                     Assets.icons.w.provider(),
                     color: Colors.white,

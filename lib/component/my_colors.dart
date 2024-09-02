@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 class SolidColors {
   static const Color titlesColors = Color.fromARGB(255, 16, 16, 16);
+  static const Color circularRightSharp = Color.fromARGB(255, 151, 120, 175);
   static const Color primeryColor = Color.fromARGB(255, 68, 4, 87);
   static const Color textTitles = Color.fromARGB(255, 0, 0, 0);
   static const Color scaffoldBg = Color.fromARGB(255, 255, 255, 255);

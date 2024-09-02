@@ -4,6 +4,8 @@ class MyStrings {
   static const String viewhHotesPadcast = "مشاهده داغ ترین پادکست ها";
   static const String relatedArthicles = "نوشته های مرتبط";
   static const String writeArthicle = "ارسال مقاله";
+  static const String blogList = "لیست مقاله ها";
+  static const String podList = "لیست پادکست ها";
   static const String submitePodcast = "ارسال پادکست";
   static const String imageProfileEdit = "ویرایش عکس پروفایل";
   static const String myFavoridBlog = "مقالات مورد علاقه من";
@@ -14,6 +16,10 @@ class MyStrings {
   static const String chooseCats= "دسته بندی هایی که دوست داری رو انتخاب کن";
   static const String blogManagement= "مدیریت مقاله ها";
   static const String podCastManagement= "مدیریت پادکست ها";
+  static const String podManagementScreen= """هنوز هیچ پادکستی به جامعه گیک های فارسی 
+اضافه نکردی !!!""";
+  static const String blogManagementScreen= """هنوز هیچ مقاله ای به جامعه گیک های فارسی 
+اضافه نکردی  !!!""";
   static const String secondMainText= """فکر کن !!  اینجا بودنت به این معناست که یک گیک تکنولوژی هستی
 دونسته هات رو با  جامعه‌ی گیک های فارسی زبان به اشتراک بذار...""";
   static const String successfulRefistration =

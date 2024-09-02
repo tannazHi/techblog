@@ -8,6 +8,17 @@ Map homePageaPosterMap = {
   "title": "دوازده قدم برنامه نویسی یک دوره ی ",
   "view": "251",
 };
+Map blogListMap = {
+  "imageAsset": Assets.images.pic1.path,
+  "writer": "ملیکا عزیزی",
+  "title": "رازهای اساسینز کرید والهالا؛ از هری پاتر و ارباب حلقه‌ها تا دارک سولز",
+  "view": "بازدید 235",
+  "tag" : "بازی رایانه ای"
+};
+Map PodListMap = {
+  "writer": "سیاوش امیریان",
+  "title": "پادکست رمزون",
+};
 //blog fake data
 List<HashTagModel> tagList = [
   HashTagModel(title: "جاوا"),
@@ -79,4 +90,4 @@ List<PodCastModel> podList = [
   PodCastModel(id: 4, name: "پادی کست", image: Assets.images.pod4.path),
 ];
 
- List<HashTagModel> selectedTags =[];
+ List<HashTagModel> selectedTags=[];

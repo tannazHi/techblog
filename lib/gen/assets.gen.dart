@@ -21,6 +21,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/bluepen.png
   AssetGenImage get bluepen => const AssetGenImage('assets/icons/bluepen.png');
 
+  /// File path: assets/icons/circle.png
+  AssetGenImage get circle => const AssetGenImage('assets/icons/circle.png');
+
   /// File path: assets/icons/hashtagicon.png
   AssetGenImage get hashtagicon =>
       const AssetGenImage('assets/icons/hashtagicon.png');
@@ -42,7 +45,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [bluemic, bluepen, hashtagicon, icon, mic, pen, user, w];
+      [bluemic, bluepen, circle, hashtagicon, icon, mic, pen, user, w];
 }
 
 class $AssetsImagesGen {
@@ -63,6 +66,21 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/pic1.png
+  AssetGenImage get pic1 => const AssetGenImage('assets/images/pic1.png');
+
+  /// File path: assets/images/pic2.png
+  AssetGenImage get pic2 => const AssetGenImage('assets/images/pic2.png');
+
+  /// File path: assets/images/pic3.png
+  AssetGenImage get pic3 => const AssetGenImage('assets/images/pic3.png');
+
+  /// File path: assets/images/pic4.png
+  AssetGenImage get pic4 => const AssetGenImage('assets/images/pic4.png');
+
+  /// File path: assets/images/pic5.png
+  AssetGenImage get pic5 => const AssetGenImage('assets/images/pic5.png');
+
   /// File path: assets/images/pod1.png
   AssetGenImage get pod1 => const AssetGenImage('assets/images/pod1.png');
 
@@ -82,6 +100,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/techbot1.svg
   SvgGenImage get techbot1 => const SvgGenImage('assets/images/techbot1.svg');
 
+  /// File path: assets/images/techbot2.svg
+  SvgGenImage get techbot2 => const SvgGenImage('assets/images/techbot2.svg');
+
   /// List of all assets
   List<dynamic> get values => [
         avatar,
@@ -89,12 +110,18 @@ class $AssetsImagesGen {
         list1,
         list2,
         logo,
+        pic1,
+        pic2,
+        pic3,
+        pic4,
+        pic5,
         pod1,
         pod2,
         pod3,
         pod4,
         programming,
-        techbot1
+        techbot1,
+        techbot2
       ];
 }
 

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
 import 'package:flutter_techblog/models/fake_data.dart';
-import 'package:flutter_techblog/my_colors.dart';
-import 'package:flutter_techblog/my_component.dart';
-import 'package:flutter_techblog/my_strings.dart';
+import 'package:flutter_techblog/component/my_colors.dart';
+import 'package:flutter_techblog/component/my_component.dart';
+import 'package:flutter_techblog/component/my_strings.dart';
+import 'package:flutter_techblog/view/blog_list.dart';
+import 'package:flutter_techblog/view/pod_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -64,20 +66,26 @@ class SeeMorePodcast extends StatelessWidget {
       padding: EdgeInsets.only(
         right: bodyMargin,
       ),
-      child: Row(
-        children: [
-          ImageIcon(
-            Assets.icons.bluemic.provider(),
-            color: SolidColors.seeMore,
-          ),
-          const SizedBox(
-            width: 8,
-          ),
-          Text(
-            MyStrings.viewhHotesPadcast,
-            style: textTheme.headlineLarge,
-          ),
-        ],
+      child: InkWell(
+        onTap: () {
+                     Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const PodList(size: Size(1000, 1000), textTheme: TextTheme(), bodyMargin: 15)));
+        },
+        child: Row(
+          children: [
+            ImageIcon(
+              Assets.icons.bluemic.provider(),
+              color: SolidColors.seeMore,
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            Text(
+              MyStrings.viewhHotesPadcast,
+              style: textTheme.headlineLarge,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -97,20 +105,26 @@ class SeeMoreBlog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: bodyMargin, bottom: 8),
-      child: Row(
-        children: [
-          ImageIcon(
-            Assets.icons.bluepen.provider(),
-            color: SolidColors.seeMore,
-          ),
-          const SizedBox(
-            width: 8,
-          ),
-          Text(
-            MyStrings.viewHotestBlog,
-            style: textTheme.headlineLarge,
-          ),
-        ],
+      child: InkWell(
+        onTap: () {
+           Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const BlogList(size: Size(1000, 1000), textTheme: TextTheme(), bodyMargin: 15)));
+        },
+        child: Row(
+          children: [
+            ImageIcon(
+              Assets.icons.bluepen.provider(),
+              color: SolidColors.seeMore,
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            Text(
+              MyStrings.viewHotestBlog,
+              style: textTheme.headlineLarge,
+            ),
+          ],
+        ),
       ),
     );
   }
