@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
 import 'package:flutter_techblog/models/fake_data.dart';
-import 'package:flutter_techblog/component/my_colors.dart';
-import 'package:flutter_techblog/component/my_component.dart';
-import 'package:flutter_techblog/component/my_strings.dart';
+import 'package:flutter_techblog/my_colors.dart';
+import 'package:flutter_techblog/my_component.dart';
+import 'package:flutter_techblog/my_strings.dart';
 import 'package:flutter_techblog/view/blogManagment_screen.dart';
 import 'package:flutter_techblog/view/podManagment_screen.dart';
 
