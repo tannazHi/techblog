@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_techblog/component/api_constant.dart';
+import 'package:flutter_techblog/component/my_component.dart';
+import 'package:flutter_techblog/component/my_strings.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
 import 'package:flutter_techblog/component/my_colors.dart';
+import 'package:flutter_techblog/services/dio_service.dart';
 import 'package:flutter_techblog/view/home_screen.dart';
 import 'package:flutter_techblog/view/profile_screen.dart';
 import 'package:flutter_techblog/view/register_intro.dart';
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
+import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-class _MainScreenState extends State<MainScreen> {
-  var selctedPageIndex = 0;
+// ignore: must_be_immutable
+class MainScreen extends StatelessWidget {
+  RxInt selctedPageIndex = 0.obs;
+
+  MainScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    DioService().getMethod(ApiConstant.getHomeItems);
     var size = MediaQuery.of(context).size;
     var textTheme = Theme.of(context).textTheme;
     double bodyMargin = size.width / 13;
@@ -61,7 +65,9 @@ class _MainScreenState extends State<MainScreen> {
                     "اشتراک گذاری تک بلاگ",
                     style: textTheme.titleLarge,
                   ),
-                  onTap: () {},
+                  onTap: () async {
+                    await Share.share(MyStrings.shareText);
+                  },
                 ),
                 const Divider(
                   color: SolidColors.dividerColor,
@@ -71,7 +77,9 @@ class _MainScreenState extends State<MainScreen> {
                     "تک‌بلاگ در گیت هاب",
                     style: textTheme.titleLarge,
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    myLaunchUrl(MyStrings.techblogGithubUrl);
+                  },
                 ),
                 const Divider(
                   color: SolidColors.dividerColor,
@@ -110,24 +118,29 @@ class _MainScreenState extends State<MainScreen> {
         ),
         body: Stack(children: [
           Positioned.fill(
-              child: IndexedStack(
-            index: selctedPageIndex,
-            children: [
-              HomeScreen(
-                  size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-              ProfileScreen(
-                  size: size, textTheme: textTheme, bodyMargin: bodyMargin),
-              RegisterIntro(
-                size: size, textTheme: textTheme, bodyMargin: bodyMargin)
-            ],
-          )),
+            child: Obx(() => IndexedStack(
+                  index: selctedPageIndex.value,
+                  children: [
+                    HomeScreen(
+                        size: size,
+                        textTheme: textTheme,
+                        bodyMargin: bodyMargin),
+                    ProfileScreen(
+                        size: size,
+                        textTheme: textTheme,
+                        bodyMargin: bodyMargin),
+                    RegisterIntro(
+                        size: size,
+                        textTheme: textTheme,
+                        bodyMargin: bodyMargin)
+                  ],
+                )),
+          ),
           BottomNavigation(
             size: size,
             bodyMargin: bodyMargin,
             changeScreen: (int value) {
-              setState(() {
-                selctedPageIndex = value;
-              });
+              selctedPageIndex.value = value;
             },
           ),
         ]),
@@ -180,7 +193,7 @@ class BottomNavigation extends StatelessWidget {
                       color: Colors.white,
                     )),
                 IconButton(
-                  onPressed: (() => changeScreen(2)) ,
+                  onPressed: (() => changeScreen(2)),
                   icon: ImageIcon(
                     Assets.icons.w.provider(),
                     color: Colors.white,

@@ -33,7 +33,7 @@ class BlogmanagmentScreen extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => const MainScreen()));
+                          builder: (context) =>  MainScreen()));
                     },
                     child: const Icon(
                       Icons.arrow_circle_right_sharp,

@@ -1,8 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_techblog/gen/assets.gen.dart';
 import 'package:flutter_techblog/models/fake_data.dart';
-// import 'package:flutter_techblog/component/my_colors.dart';
 import 'package:flutter_techblog/component/my_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TechDivider extends StatelessWidget {
   const TechDivider({
@@ -23,7 +25,7 @@ class TechDivider extends StatelessWidget {
 
 // ignore: must_be_immutable
 class MainTags extends StatelessWidget {
-    MainTags({
+  MainTags({
     super.key,
     required this.textTheme,
     required this.index,
@@ -50,7 +52,7 @@ class MainTags extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 2,right: 10),
+              padding: const EdgeInsets.only(left: 2, right: 10),
               child: ImageIcon(
                 Assets.icons.hashtagicon.provider(),
                 color: Colors.white,
@@ -66,5 +68,14 @@ class MainTags extends StatelessWidget {
             ),
           ],
         ));
+  }
+}
+
+myLaunchUrl(String url) async {
+  var uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  } else {
+    log("could not launch ${uri.toString()}");
   }
 }

@@ -1,7 +1,9 @@
 class MyStrings {
   static const String viewHotestBlog = "مشاهده داغ ترین نوشته ها ";
+  static const String shareText = "من از تگ بلاگ استفاده میکنم خیلی باحاله تو هم داشته باش\n www.sasansafari.com ";
   static const String secondMainTitle = "دونسته هات رو با بقیه به اشتراک بذار ...";
   static const String viewhHotesPadcast = "مشاهده داغ ترین پادکست ها";
+  static const String techblogGithubUrl= "https://github.com/sasansafari/techblog";
   static const String relatedArthicles = "نوشته های مرتبط";
   static const String writeArthicle = "ارسال مقاله";
   static const String blogList = "لیست مقاله ها";

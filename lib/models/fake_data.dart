@@ -15,6 +15,7 @@ Map blogListMap = {
   "view": "بازدید 235",
   "tag" : "بازی رایانه ای"
 };
+// ignore: non_constant_identifier_names
 Map PodListMap = {
   "writer": "سیاوش امیریان",
   "title": "پادکست رمزون",

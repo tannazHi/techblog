@@ -114,7 +114,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home: const MainScreen());
+        home:  MainScreen());
     // home: PodList(size: Size(1000, 1000), textTheme: textTheme, bodyMargin:15));
     // home: BlogList(size: const Size(1000, 1000), textTheme: textTheme, bodyMargin: 15,));
   }
