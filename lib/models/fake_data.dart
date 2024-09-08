@@ -84,11 +84,5 @@ List<BlogModel> blogList = [
       views: "256"),
 ];
 
-List<PodCastModel> podList = [
-  PodCastModel(id: 1, name: "رمزون", image: Assets.images.pod1.path),
-  PodCastModel(id: 2, name: "رادیو کدیاد", image: Assets.images.pod2.path),
-  PodCastModel(id: 3, name: "تکنوکست", image: Assets.images.pod3.path),
-  PodCastModel(id: 4, name: "پادی کست", image: Assets.images.pod4.path),
-];
 
  List<HashTagModel> selectedTags=[];

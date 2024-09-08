@@ -10,6 +10,7 @@
 analyzer:
   errors:
     file_names: ignore
+    avoid_function_literals_in_foreach_calls: ignore ignore ignore ignore ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:
